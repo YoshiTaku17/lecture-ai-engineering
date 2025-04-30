@@ -77,12 +77,20 @@ if __name__ == "__main__":
     print("Health check:")
     print(client.health_check())
     print()
-    
+
     # 単一の質問
     print("Simple question:")
-    result = client.generate([
-        {"prompt": "AIについて100文字で教えてください"}
-    ])
+    result = client.generate("AIについて100文字で教えてください")
     print(f"Response: {result['generated_text']}")
     print(f"Model processing time: {result['response_time']:.2f}s")
-    print(f"Total request time: {result['total_request_time']:.2f}s")    
+    print(f"Total request time: {result['total_request_time']:.2f}s")
+
+    
+    # # 単一の質問
+    # print("Simple question:")
+    # result = client.generate([
+    #     {"prompt": "AIについて100文字で教えてください"}
+    # ])
+    # print(f"Response: {result['generated_text']}")
+    # print(f"Model processing time: {result['response_time']:.2f}s")
+    # print(f"Total request time: {result['total_request_time']:.2f}s")    
